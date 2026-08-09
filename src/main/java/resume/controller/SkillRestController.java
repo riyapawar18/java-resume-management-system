@@ -34,9 +34,7 @@ public class SkillRestController {
 
         skillService.saveSkill(skill);
 
-        return ResponseEntity.ok(
-                "Skill created successfully"
-        );
+        return ResponseEntity.ok("Skill created successfully");
     }
 
     @PutMapping("/{id}")
@@ -44,17 +42,14 @@ public class SkillRestController {
             @PathVariable Long id,
             @RequestBody Skill skill) {
 
-        Skill existing =
-                skillService.getSkillById(id);
+        Skill existing = skillService.getSkillById(id);
 
         existing.setName(skill.getName());
         existing.setCategory(skill.getCategory());
 
         skillService.saveSkill(existing);
 
-        return ResponseEntity.ok(
-                "Skill updated successfully"
-        );
+        return ResponseEntity.ok("Skill updated successfully");
     }
 
     @DeleteMapping("/{id}")
@@ -63,8 +58,6 @@ public class SkillRestController {
 
         skillService.deleteSkill(id);
 
-        return ResponseEntity.ok(
-                "Skill deleted successfully"
-        );
+        return ResponseEntity.ok("Skill deleted successfully");
     }
 }
