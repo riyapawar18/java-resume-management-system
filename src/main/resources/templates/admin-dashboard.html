@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Resume Admin</title>
+
+    <link rel="stylesheet"
+          href="/css/style.css">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <strong>Resume Admin</strong>
+
+    <div>
+
+        <a href="/">
+            Resume
+        </a>
+
+        <a href="/logout">
+            Logout
+        </a>
+
+    </div>
+
+</nav>
+
+<div class="container">
+
+    <h1>Dashboard</h1>
+
+    <div class="card-container">
+
+        <div class="card">
+
+            <h2>Skills</h2>
+
+            <div class="number"
+                 th:text="${skillCount}">
+                0
+            </div>
+
+            <a class="btn btn-primary"
+               href="/admin/skills">
+
+                Manage Skills
+
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Projects</h2>
+
+            <div class="number"
+                 th:text="${projectCount}">
+                0
+            </div>
+
+            <a class="btn btn-primary"
+               href="/admin/projects">
+
+                Manage Projects
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

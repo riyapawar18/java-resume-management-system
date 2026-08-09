@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Edit Project</title>
+
+</head>
+
+<body>
+
+<h1>Edit Project</h1>
+
+<form th:action="@{/admin/projects/update/{id}(id=${project.id})}"
+      method="post"
+      th:object="${project}">
+
+    <label>Project Title</label>
+
+    <input type="text"
+           th:field="*{title}"
+           required>
+
+    <br><br>
+
+    <label>Technologies</label>
+
+    <input type="text"
+           th:field="*{technologies}"
+           required>
+
+    <br><br>
+
+    <label>Description</label>
+
+    <br>
+
+    <textarea th:field="*{description}"
+              rows="6"
+              cols="60"
+              required>
+    </textarea>
+
+    <br><br>
+
+    <button type="submit">
+        Update Project
+    </button>
+
+</form>
+
+<br>
+
+<a href="/admin/projects">Back</a>
+
+</body>
+
+</html>

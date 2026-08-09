@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Projects</title>
+
+</head>
+
+<body>
+
+<h1>Manage Projects</h1>
+
+<a href="/admin">Dashboard</a>
+
+<br><br>
+
+<a href="/admin/projects/add">
+    + Add Project
+</a>
+
+<br><br>
+
+<table border="1"
+       cellpadding="12"
+       cellspacing="0">
+
+    <tr>
+
+        <th>ID</th>
+        <th>Title</th>
+        <th>Technologies</th>
+        <th>Description</th>
+        <th>Actions</th>
+
+    </tr>
+
+    <tr th:each="project : ${projects}">
+
+        <td th:text="${project.id}"></td>
+
+        <td th:text="${project.title}"></td>
+
+        <td th:text="${project.technologies}"></td>
+
+        <td th:text="${project.description}"></td>
+
+        <td>
+
+            <a th:href="@{/admin/projects/edit/{id}(id=${project.id})}">
+                Edit
+            </a>
+
+            <a th:href="@{/admin/projects/delete/{id}(id=${project.id})}"
+               onclick="return confirm('Delete this project?')">
+
+                Delete
+
+            </a>
+
+        </td>
+
+    </tr>
+
+</table>
+
+</body>
+
+</html>

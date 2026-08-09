@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Add Project</title>
+
+</head>
+
+<body>
+
+<h1>Add Project</h1>
+
+<form action="/admin/projects/save"
+      method="post"
+      th:object="${project}">
+
+    <label>Project Title</label>
+
+    <input type="text"
+           th:field="*{title}"
+           required>
+
+    <br><br>
+
+    <label>Technologies</label>
+
+    <input type="text"
+           th:field="*{technologies}"
+           placeholder="Java, Spring Boot, MySQL"
+           required>
+
+    <br><br>
+
+    <label>Description</label>
+
+    <br>
+
+    <textarea th:field="*{description}"
+              rows="6"
+              cols="60"
+              required>
+    </textarea>
+
+    <br><br>
+
+    <button type="submit">
+        Save Project
+    </button>
+
+</form>
+
+<br>
+
+<a href="/admin/projects">Back</a>
+
+</body>
+
+</html>
